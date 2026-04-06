@@ -1,0 +1,6 @@
+#spring.application.name=SpringBootAPIGatewayservice1
+spring:
+  application:
+    name: SpringCloudService2
+server:
+  port: 7576
