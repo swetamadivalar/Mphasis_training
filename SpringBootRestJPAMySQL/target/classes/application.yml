@@ -1,0 +1,83 @@
+#spring.application.name=SpringBootRESTJPAMYSQL
+
+
+
+
+spring:
+
+ application:
+
+  name: SpringBootRESTJPAMYSQL
+
+ datasource:
+
+  driver-class-name: com.mysql.cj.jdbc.Driver
+
+  url: jdbc:mysql://localhost:3306/mlamarch1
+
+  username: root
+
+  password: root@39
+
+ jpa:
+
+   database-platform: org.hibernate.dialect.MySQLDialect
+
+   hibernate:
+
+      ddl-auto: create
+
+   show-sql: true
+
+ jackson:
+
+    deserialization:
+
+     fail-on-null-for-primitives: false
+
+debug: true
+
+
+
+
+server:
+
+ port: 7799
+
+
+
+
+#logging
+
+logging:
+
+  pattern:
+
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+
+  level:
+
+   root: INFO
+
+  file:
+
+   path: logs/
+
+   name: logs/application.log
+
+#actuatore confifuration 
+#metrics,info,health,env,beans,mappings,loggers,threaddump,heapdump,shutdown etc.
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+    jmx:
+      exposure:
+        include:
+        - "*" 
+  endpoint:
+    health:
+      show-details: always
+
+
+
